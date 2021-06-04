@@ -9,7 +9,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     index: './js/index.js',
-    app: './js/app.js',
+    product: './js/product.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -120,10 +120,10 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: '產品項目',
-      filename: 'app.html',
-      template: 'html/app.html',
+      filename: 'product.html',
+      template: 'html/product.html',
       chunksSortMode: 'manual',
-      chunks: ['vendors', 'app'],
+      chunks: ['vendors', 'product'],
     }),
   ],
 }
