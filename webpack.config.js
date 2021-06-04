@@ -45,7 +45,6 @@ module.exports = {
       warnings: false,
     },
     proxy: {
-      // 原本網址 https://www.vscinemas.com.tw/vsweb/api/GetLstDicCinema
       '/vsweb/api/': {
         target: 'https://www.vscinemas.com.tw',
         changeOrigin: true,
@@ -95,13 +94,7 @@ module.exports = {
       },
       {
         test: /\.(sass|scss)$/,
-        use: [
-          // 要照順序 下到上
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.(js)$/,
@@ -114,7 +107,7 @@ module.exports = {
       filename: 'css/[name].css',
     }),
     new webpack.ProvidePlugin({
-      $: 'jquery', // plugin 的名字
+      $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
     }),
