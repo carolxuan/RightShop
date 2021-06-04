@@ -1,0 +1,14 @@
+// Required
+@import '../../node_modules/bootstrap/scss/functions';
+@import 'helper/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,400;1,700&display=swap');
+
+// Option
+@import 'helper/base';
+@import 'helper/grid';
+@import 'helper/layout';
+@import 'component/carousel';
+@import 'page/index';
+@import 'page/app';

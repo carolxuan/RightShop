@@ -1,0 +1,101 @@
+.banner {
+  position: relative;
+  .banner-bg {
+    background-image: url(../image/banner-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 560px;
+    object-fit: cover;
+    @include pad() {
+      background-position: right center;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: 0.3;
+    }
+  }
+  .banner-txt {
+    position: absolute;
+    top: 20vh;
+    padding-left: 120px;
+    @include pad() {
+      padding-left: 0;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.category {
+  li {
+    padding: 24px 0;
+    cursor: pointer;
+    @include pad() {
+      border-right: none !important;
+    }
+    &:hover {
+      background-color: $primary;
+    }
+  }
+}
+
+.advantage {
+  .advantage-card {
+    img {
+      height: 370px;
+      object-fit: cover;
+      width: 100%;
+    }
+    li {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, #000, rgba(255, 255, 255, 0));
+        opacity: 0.5;
+      }
+      &:hover::before {
+        opacity: 0;
+      }
+    }
+    .card-txt {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+    }
+  }
+}
+
+.recommend {
+  .recommend-content {
+    background-color: $primary;
+    height: 360px;
+  }
+}
+
+.subscribe {
+  height: 440px;
+  background: url(../image/subscribe-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  .subscribe-content {
+    width: 60%;
+    opacity: 0.9;
+    @include Desktops() {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-card {
+  background-color: #fff;
+  padding: 24px;
+}
+.swiper-slide {
+  width: 30%;
+  @include Desktops() {
+    width: 40%;
+  }
+  @include pad() {
+    width: 100%;
+  }
+}
+.swiper-pagination {
+  position: relative;
+}
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 0;
+}
