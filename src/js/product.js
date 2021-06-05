@@ -1,5 +1,5 @@
 import '../style/all.scss'
-import '../js/layout.js'
+import './layout.js'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { apiPath, baseUrl, token, config } from './config.js'
