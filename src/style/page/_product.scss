@@ -1,27 +1,20 @@
 .product {
-  .breadcrumb {
-    li {
-      &:last-child::before {
-        display: inline-block;
-        padding-right: 1rem;
-        color: $gray-500;
-        content: '/';
-      }
-      &.active {
-        font-weight: 600;
-      }
-    }
-  }
   .side-menu {
-    position: sticky;
-    top: 0;
-    margin-top: 8px;
+    padding: 0 8px;
     li {
+      padding: 8px 16px;
+      border: 1px solid $gray-500;
       cursor: pointer;
       &.active {
         background-color: $primary;
         color: $black;
         font-weight: 600;
+      }
+      &:nth-child(1) {
+        border-radius: 5px 0 0 5px;
+      }
+      &:nth-child(4) {
+        border-radius: 0 5px 5px 0;
       }
     }
   }
@@ -29,11 +22,14 @@
     display: flex;
     flex-wrap: wrap;
     li {
-      width: 30%;
+      width: 23.5%;
       background-color: $white;
       box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
       padding: 16px;
       margin: 8px 8px;
+      @include largeDesktops() {
+        width: 31.5%;
+      }
       @include Desktops() {
         width: 46%;
       }

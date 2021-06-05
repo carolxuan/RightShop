@@ -22,8 +22,8 @@ const Toast = Swal.mixin({
 
 // DOM
 const productWrap = document.querySelector('.product-wrap')
-const sideMenuItem = document.querySelector('.side-menu-item')
-const sideMenuItemLi = document.querySelectorAll('.side-menu-item li')
+const sideMenuItem = document.querySelector('.side-menu')
+const sideMenuItemLi = document.querySelectorAll('.side-menu li')
 
 // 監聽
 sideMenuItem.addEventListener('click', handleItem)
@@ -82,6 +82,9 @@ function renderProducts(category) {
 
 // 點擊產品料表
 function handleItem(e) {
+  if (e.target.nodeName === 'UL') {
+    return
+  }
   let value = e.target.dataset.item
   renderProducts(value)
 }

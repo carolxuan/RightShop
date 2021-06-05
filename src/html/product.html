@@ -11,7 +11,7 @@
     />
   </head>
   <body>
-    <header class="topBar">
+    <header class="topBar mb-6">
       <div class="container">
         <nav class="wrap align-items-center justify-content-between">
           <h1 class="col-4">
@@ -32,75 +32,90 @@
         </nav>
       </div>
     </header>
-    <section class="product mb-6">
-      <div class="container">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li>
-              <a href="./index.html">首頁</a>
-            </li>
-            <li class="ps-3 active">產品列表</li>
-          </ol>
-        </nav>
-        <div class="row">
-          <div class="col-lg-2 col-md-3 mb-md-0 mb-4">
-            <div class="side-menu">
-              <ul class="side-menu-item list-group">
-                <li
-                  class="list-group-item d-flex align-items-cente active"
-                  data-item="全部"
-                >
-                  <img
-                    src="<%= require('../image/gift.svg') %>"
-                    alt="全部"
-                    class="pe-3"
-                    style="width: 36px; height: 20px; object-fit: cover"
-                    data-item="全部"
-                  />全部
-                </li>
-                <li
-                  class="list-group-item d-flex align-items-center"
-                  data-item="床架"
-                >
-                  <img
-                    src="<%= require('../image/bed.svg') %>"
-                    alt="床架"
-                    class="pe-3"
-                    style="width: 36px"
-                    data-item="床架"
-                  />床架
-                </li>
-                <li
-                  class="list-group-item d-flex align-items-center"
-                  data-item="收納"
-                >
-                  <img
-                    src="<%= require('../image/storage.svg') %>"
-                    alt="收納"
-                    class="pe-3"
-                    style="width: 36px"
-                    data-item="收納"
-                  />收納
-                </li>
-                <li
-                  class="list-group-item d-flex align-items-center"
-                  data-item="窗簾"
-                >
-                  <img
-                    src="<%= require('../image/curtain.svg') %>"
-                    alt="窗簾"
-                    class="pe-3"
-                    style="width: 36px"
-                    data-item="窗簾"
-                  />窗簾
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-10 col-md-9">
-            <ul class="product-wrap"></ul>
-          </div>
-        </div>
+    <section class="product container mb-10">
+      <ul class="side-menu d-flex mb-4">
+        <li class="d-flex align-items-center active" data-item="全部">
+          <img
+            src="<%= require('../image/gift.svg') %>"
+            alt="全部"
+            class="pe-3"
+            style="width: 36px; height: 20px; object-fit: cover"
+            data-item="全部"
+          />全部
+        </li>
+        <li class="d-flex align-items-center" data-item="床架">
+          <img
+            src="<%= require('../image/bed.svg') %>"
+            alt="床架"
+            class="pe-3"
+            style="width: 36px"
+            data-item="床架"
+          />床架
+        </li>
+        <li class="d-flex align-items-center" data-item="收納">
+          <img
+            src="<%= require('../image/storage.svg') %>"
+            alt="收納"
+            class="pe-3"
+            style="width: 36px"
+            data-item="收納"
+          />收納
+        </li>
+        <li class="d-flex align-items-center" data-item="窗簾">
+          <img
+            src="<%= require('../image/curtain.svg') %>"
+            alt="窗簾"
+            class="pe-3"
+            style="width: 36px"
+            data-item="窗簾"
+          />窗簾
+        </li>
+      </ul>
+      <div>
+        <ul class="product-wrap"></ul>
+      </div>
+    </section>
+    <section class="cart-list container mb-6">
+      <h3 class="text-center mb-3">我的購物車</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="total text-end mb-5">
+        總金額&emsp;&emsp;NT&ensp;<span class="cartTotal display-7"></span>
+      </div>
+      <div class="text-end">
+        <a href="./order.html" class="btn btn-primary">
+          下一步，填寫資料<span class="material-icons align-middle"
+            >arrow_forward</span
+          >
+        </a>
       </div>
     </section>
     <footer class="bg-gray pt-7 pb-3">
