@@ -45,3 +45,82 @@
     }
   }
 }
+
+.cart {
+  .cart-table {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 18px;
+    @include pad() {
+      border-collapse: separate;
+      border-spacing: 0px 24px;
+    }
+    tr {
+      border-bottom: 1px solid $gray-400;
+    }
+    th {
+      padding: 16px 0;
+    }
+    td {
+      padding: 16px 0;
+    }
+    @include pad() {
+      thead {
+        display: none;
+      }
+      td {
+        display: block;
+        padding: 16px;
+        &:last-child {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+        &:nth-child(4) {
+          padding: 16px 16px 36px 16px;
+        }
+        &:before {
+          content: attr(data-title);
+          display: inline-block;
+          width: auto;
+          color: $gray-700;
+          min-width: 30%;
+          font-weight: 900;
+          padding-right: 16px;
+        }
+      }
+      tr {
+        position: relative;
+        background-color: #fff;
+        box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+        border-bottom: none;
+      }
+    }
+  }
+  .card-table-title {
+    display: flex;
+    align-items: center;
+    img {
+      width: 110px;
+      height: 100px;
+      object-fit: cover;
+      object-position: center;
+    }
+    p {
+      padding-left: 16px;
+    }
+  }
+  .deleteBtn {
+    transition: all 0.3s;
+    &:hover {
+      transform: rotate(180deg) scale(1.5);
+    }
+    // @include pad() {
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    // }
+  }
+}

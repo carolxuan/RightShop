@@ -75,35 +75,106 @@
         <ul class="product-wrap"></ul>
       </div>
     </section>
-    <section class="cart-list container mb-6">
+    <section class="cart container mb-6">
       <h3 class="text-center mb-3">我的購物車</h3>
-      <table class="table">
+      <table class="cart-table">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">品項</th>
+            <th scope="col">單價</th>
+            <th scope="col">數量</th>
+            <th scope="col">金額</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>
+              <div class="card-table-title">
+                <img src="../image/subscribe-bg.jpg" alt="" />
+                <p>安東尼床墊</p>
+              </div>
+            </td>
+            <td data-title="單價">NT $3780</td>
+            <td data-title="數量">
+              <a
+                href="javascript:void(0);"
+                class="material-icons minus align-middle"
+                data-action="minus"
+                data-id="${item.id}"
+                >remove</a
+              >
+              <input
+                type="text"
+                value="${item.quantity}"
+                style="width: 30px"
+                readonly="readonly"
+              />
+              <a
+                href="javascript:void(0);"
+                class="material-icons add align-middle"
+                data-action="add"
+                data-id="${
+                      item.id
+                    }"
+                >add</a
+              >
+            </td>
+            <td data-title="金額">NT $3780</td>
+            <td>
+              <a
+                href="javascript:void(0);"
+                class="material-icons deleteBtn"
+                style="font-size: 32px"
+                data-cartId="${item.id}"
+                data-action="deleteItem"
+                >clear</a
+              >
+            </td>
           </tr>
           <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <td>
+              <div class="card-table-title">
+                <img src="../image/subscribe-bg.jpg" alt="" />
+                <p>安東尼床墊</p>
+              </div>
+            </td>
+            <td data-title="單價">NT $3780</td>
+            <td data-title="數量">
+              <a
+                href="javascript:void(0);"
+                class="material-icons minus align-middle"
+                data-action="minus"
+                data-id="${item.id}"
+                >remove</a
+              >
+              <input
+                type="text"
+                value="${item.quantity}"
+                style="width: 30px"
+                readonly="readonly"
+              />
+              <a
+                href="javascript:void(0);"
+                class="material-icons add align-middle"
+                data-action="add"
+                data-id="${
+                      item.id
+                    }"
+                >add</a
+              >
+            </td>
+            <td data-title="金額">NT $3780</td>
+            <td>
+              <a
+                href="javascript:void(0);"
+                class="material-icons deleteBtn"
+                style="font-size: 32px"
+                data-cartId="${item.id}"
+                data-action="deleteItem"
+                >clear</a
+              >
+            </td>
           </tr>
         </tbody>
       </table>
