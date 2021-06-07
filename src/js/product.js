@@ -24,10 +24,13 @@ const Toast = Swal.mixin({
 const productWrap = document.querySelector('.product-wrap')
 const sideMenuItem = document.querySelector('.side-menu')
 const sideMenuItemLi = document.querySelectorAll('.side-menu li')
+const cartList = document.querySelector('.cart-list')
+const cartTotal = document.querySelector('.cart-total')
 
 // 監聽
 sideMenuItem.addEventListener('click', handleItem)
 productWrap.addEventListener('click', addCartBtn)
+cartList.addEventListener('click', changeCart)
 
 // 初始化
 function init() {
@@ -39,6 +42,7 @@ init()
 // API Data
 let products = []
 let carts = []
+let finalTotal
 
 // 取得商品列表
 function getProducts() {
@@ -63,6 +67,8 @@ function getCarts() {
     .get(url)
     .then((res) => {
       carts = res.data.carts
+      finalTotal = res.data.finalTotal
+      renderCarts()
     })
     .catch((error) => {
       console.log(error)
@@ -102,6 +108,46 @@ function addCartBtn(e) {
     })
 }
 
+// 刪除購物車產品
+function deleteCartItem(cardId) {
+  const url = `${baseUrl}/api/livejs/v1/customer/${apiPath}/carts/${cardId}`
+  loading('run')
+  axios
+    .delete(url)
+    .then((res) => {
+      getCarts()
+      loading()
+      Toast.fire({
+        title: `刪除成功`,
+        icon: 'success',
+      })
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
+
+// 編輯購物車產品數量
+function cartPatch(cardId, num) {
+  const url = `${baseUrl}/api/livejs/v1/customer/${apiPath}/carts`
+  const data = {
+    data: {
+      id: cardId,
+      quantity: num,
+    },
+  }
+  loading('run')
+  axios
+    .patch(url, data)
+    .then((res) => {
+      getCarts()
+      loading()
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
+
 // 渲染產品列表
 function renderProducts(category) {
   let list = ''
@@ -128,6 +174,59 @@ function renderProducts(category) {
 }
 
 // 渲染購物車列表
+function renderCarts() {
+  let list = ''
+  if (carts.length >= 1) {
+    carts.forEach((item) => {
+      list += `<tr>
+            <td>
+              <div class="card-table-title">
+                <img src="${item.product.images}" alt="${item.product.title}" />
+                <p>${item.product.title}</p>
+              </div>
+            </td>
+            <td data-title="單價">NT $${item.product.price}</td>
+            <td data-title="數量">
+              <a
+                href="javascript:void(0);"
+                class="material-icons minus align-middle"
+                data-action="minus"
+                data-id="${item.id}"
+                >remove</a
+              >
+              <input
+                type="text"
+                value="${item.quantity}"
+                style="width: 30px"
+                readonly="readonly"
+              />
+              <a
+                href="javascript:void(0);"
+                class="material-icons add align-middle"
+                data-action="add"
+                data-id="${item.id}"
+                >add</a
+              >
+            </td>
+            <td data-title="金額">NT $${item.product.price * item.quantity}</td>
+            <td class="deleteItem">
+              <a
+                href="javascript:void(0);"
+                class="material-icons deleteBtn"
+                style="font-size: 32px"
+                data-id="${item.id}"
+                data-action="deleteItem"
+                >clear</a
+              >
+            </td>
+          </tr>`
+    })
+  } else {
+    list = `<tr><td>目前購物車是空的</td></tr>`
+  }
+  cartList.innerHTML = list
+  cartTotal.textContent = finalTotal
+}
 
 // 點擊產品料表
 function handleItem(e) {
@@ -144,10 +243,37 @@ sideMenuItemLi.forEach((el) => {
 })
 
 function openMenu(e) {
-  let itemTarget = e.currentTarget
-  let valueTarget = itemTarget.dataset.item
+  const itemTarget = e.currentTarget
+  const valueTarget = itemTarget.dataset.item
   sideMenuItemLi.forEach(function (el) {
     el.classList.remove('active')
   })
   itemTarget.classList.add('active')
+}
+
+// 購物車觸發按鈕
+function changeCart(e) {
+  const cardId = e.target.dataset.id
+  let num = 0
+  carts.forEach((item) => {
+    if (item.id === cardId) {
+      num = item.quantity
+    }
+  })
+  if (e.target.dataset.action === 'deleteItem') {
+    deleteCartItem(cardId)
+  } else if (e.target.dataset.action === 'add') {
+    num += 1
+    cartPatch(cardId, num)
+  } else if (e.target.dataset.action === 'minus') {
+    if (num === 1) {
+      Toast.fire({
+        title: `產品數量不可以小於 1`,
+        icon: 'warning',
+      })
+    } else {
+      num -= 1
+      cartPatch(cardId, num)
+    }
+  }
 }

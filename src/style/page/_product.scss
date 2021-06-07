@@ -55,7 +55,7 @@
     font-size: 18px;
     @include pad() {
       border-collapse: separate;
-      border-spacing: 0px 24px;
+      border-spacing: 0px 10px;
     }
     tr {
       border-bottom: 1px solid $gray-400;
@@ -73,11 +73,6 @@
       td {
         display: block;
         padding: 16px;
-        &:last-child {
-          position: absolute;
-          top: 0;
-          right: 0;
-        }
         &:nth-child(4) {
           padding: 16px 16px 36px 16px;
         }
@@ -112,15 +107,18 @@
       padding-left: 16px;
     }
   }
+  .deleteItem {
+    @include pad() {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
   .deleteBtn {
     transition: all 0.3s;
+    color: $red;
     &:hover {
       transform: rotate(180deg) scale(1.5);
     }
-    // @include pad() {
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    // }
   }
 }
