@@ -1,0 +1,27 @@
+.order-list {
+  background-color: $white;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  border-radius: 10px;
+}
+.orderList-table {
+  thead {
+    tr {
+      border-bottom: 1px solid #b7b7b7;
+      th {
+        padding: 14px 0;
+      }
+    }
+  }
+  .orderList-item {
+    tr {
+      border-bottom: 1px solid #b7b7b7;
+      td {
+        padding: 14px 0;
+      }
+    }
+  }
+}
+.orderInfo-message {
+  color: $red;
+}

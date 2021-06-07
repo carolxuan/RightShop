@@ -26,11 +26,13 @@ const sideMenuItem = document.querySelector('.side-menu')
 const sideMenuItemLi = document.querySelectorAll('.side-menu li')
 const cartList = document.querySelector('.cart-list')
 const cartTotal = document.querySelector('.cart-total')
+const nextBtn = document.querySelector('.next-btn')
 
 // 監聽
 sideMenuItem.addEventListener('click', handleItem)
 productWrap.addEventListener('click', addCartBtn)
 cartList.addEventListener('click', changeCart)
+nextBtn.addEventListener('click', nextPage)
 
 // 初始化
 function init() {
@@ -275,5 +277,18 @@ function changeCart(e) {
       num -= 1
       cartPatch(cardId, num)
     }
+  }
+}
+
+// 下一步
+function nextPage(e) {
+  e.preventDefault()
+  if (carts.length < 1) {
+    Toast.fire({
+      title: `請加入產品`,
+      icon: 'warning',
+    })
+  } else {
+    window.location.href = './information.html'
   }
 }

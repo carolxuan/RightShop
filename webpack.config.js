@@ -10,6 +10,7 @@ module.exports = {
   entry: {
     index: './js/index.js',
     product: './js/product.js',
+    information: './js/information.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -124,6 +125,13 @@ module.exports = {
       template: 'html/product.html',
       chunksSortMode: 'manual',
       chunks: ['vendors', 'product'],
+    }),
+    new HtmlWebpackPlugin({
+      title: '訂單資訊',
+      filename: 'information.html',
+      template: 'html/information.html',
+      chunksSortMode: 'manual',
+      chunks: ['vendors', 'information'],
     }),
   ],
 }
