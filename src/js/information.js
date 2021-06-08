@@ -124,13 +124,17 @@ function addOrder() {
       getCarts()
       form.reset()
       loading()
-      Toast.fire({
-        title: `感謝您的訂購`,
+      Swal.fire({
+        title: '感謝您的訂購',
+        text: '即將回到首頁',
         icon: 'success',
+        showConfirmButton: false,
+        timerProgressBar: true,
+        timer: 2000,
       })
       setTimeout(() => {
         window.location.href = './index.html'
-      }, 1000)
+      }, 2000)
     })
     .catch((error) => {
       console.log(error)
