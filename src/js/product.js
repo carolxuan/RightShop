@@ -181,47 +181,54 @@ function renderCarts() {
   if (carts.length >= 1) {
     carts.forEach((item) => {
       list += `<tr>
-            <td>
-              <div class="card-table-title">
-                <img src="${item.product.images}" alt="${item.product.title}" />
-                <p>${item.product.title}</p>
-              </div>
-            </td>
-            <td data-title="單價">NT $${item.product.price}</td>
-            <td data-title="數量">
-              <a
-                href="javascript:void(0);"
-                class="material-icons minus align-middle"
-                data-action="minus"
-                data-id="${item.id}"
-                >remove</a
-              >
-              <input
-                type="text"
-                value="${item.quantity}"
-                style="width: 30px"
-                readonly="readonly"
-              />
-              <a
-                href="javascript:void(0);"
-                class="material-icons add align-middle"
-                data-action="add"
-                data-id="${item.id}"
-                >add</a
-              >
-            </td>
-            <td data-title="金額">NT $${item.product.price * item.quantity}</td>
-            <td class="deleteItem">
-              <a
-                href="javascript:void(0);"
-                class="material-icons deleteBtn"
-                style="font-size: 32px"
-                data-id="${item.id}"
-                data-action="deleteItem"
-                >clear</a
-              >
-            </td>
-          </tr>`
+                <td>
+                  <a
+                    href="javascript:void(0);"
+                    class="material-icons deleteBtn"
+                    style="font-size: 32px"
+                    data-id="${item.id}"
+                    data-action="deleteItem"
+                    >clear</a
+                  >
+                </td>
+                  <td>
+                  <div class="card-table-title">
+                    <img src="${item.product.images}" alt="${
+        item.product.title
+      }" />
+                    <p>${item.product.title}</p>
+                  </div>
+                </td>
+                <td data-title="單價" class="td-before">NT $${
+                  item.product.price
+                }</td>
+                <td data-title="數量" class="td-before">
+                  <a
+                    href="javascript:void(0);"
+                    class="material-icons minus align-middle"
+                    data-action="minus"
+                    data-id="${item.id}"
+                    >remove</a
+                  >
+                  <input
+                    type="text"
+                    value="${item.quantity}"
+                    style="width: 30px"
+                    readonly="readonly"
+                  />
+                  <a
+                    href="javascript:void(0);"
+                    class="material-icons add align-middle"
+                    data-action="add"
+                    data-id="${item.id}"
+                    >add</a
+                  >
+                </td>
+                <td data-title="金額" class="td-before">NT $${
+                  item.product.price * item.quantity
+                }</td>
+                
+              </tr>`
     })
   } else {
     list = `<tr><td>目前購物車是空的</td></tr>`

@@ -73,9 +73,11 @@
       td {
         display: block;
         padding: 16px;
-        &:nth-child(4) {
-          padding: 16px 16px 36px 16px;
+        &:nth-child(1) {
+          padding: 16px 16px 0 16px;
         }
+      }
+      .td-before {
         &:before {
           content: attr(data-title);
           display: inline-block;
@@ -87,7 +89,6 @@
         }
       }
       tr {
-        position: relative;
         background-color: #fff;
         box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
         border-bottom: none;
@@ -105,13 +106,6 @@
     }
     p {
       padding-left: 16px;
-    }
-  }
-  .deleteItem {
-    @include pad() {
-      position: absolute;
-      top: 0;
-      right: 0;
     }
   }
   .deleteBtn {
