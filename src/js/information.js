@@ -128,6 +128,7 @@ function addOrder() {
         title: '感謝您的訂購',
         text: '即將回到首頁',
         icon: 'success',
+        background: 'black',
         showConfirmButton: false,
         timerProgressBar: true,
         timer: 2000,
