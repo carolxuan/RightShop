@@ -19,32 +19,42 @@
         <div class="col-12 col-md-6">
           <div class="sign-inner">
             <h3 class="text-center mb-5">管理員登入</h3>
-            <form action="" class="login-form">
+            <form action="" class="sign-form">
               <div class="mb-3">
-                <label for="inputUser" class="form-label fw-bold display-10"
+                <label
+                  for="exampleInputEmail"
+                  class="form-label fw-bold display-10"
                   >帳號</label
                 >
                 <input
                   type="text"
                   class="form-control mb-1"
-                  id="inputUser"
+                  id="exampleInputEmail"
                   name="帳號"
+                  aria-describedby="emailHelp"
                   placeholder="請輸入帳號"
+                  autocomplete="on"
                 />
-                <p class="text-gray5">提示：good123@gmail.com</p>
+                <div id="emailHelp" class="text-gray5">
+                  提示：good123@gmail.com
+                </div>
               </div>
               <div class="mb-3">
-                <label for="inputPassword" class="form-label fw-bold display-10"
+                <label
+                  for="exampleInputPassword"
+                  class="form-label fw-bold display-10"
                   >密碼</label
                 >
                 <input
                   type="password"
                   class="form-control mb-1"
-                  id="inputPassword"
+                  id="exampleInputPassword"
                   name="密碼"
+                  aria-describedby="passwordHelp"
                   placeholder="請輸入密碼"
+                  autocomplete="on"
                 />
-                <p class="text-gray5">提示：123456</p>
+                <div id="passwordHelp" class="text-gray5">提示：123456</div>
               </div>
               <a
                 href="javascript:void(0)"

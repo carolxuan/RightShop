@@ -4,6 +4,7 @@
 @import '../../node_modules/bootstrap/scss/mixins';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,400;1,700&display=swap');
+@import '../../node_modules/c3/c3.min.css';
 
 // Option
 @import 'helper/base';
@@ -15,4 +16,3 @@
 @import 'page/information';
 @import 'page/sign';
 @import 'page/admin';
-

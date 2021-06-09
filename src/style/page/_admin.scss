@@ -1,0 +1,18 @@
+.order-table-wrap {
+  @include pad() {
+    overflow-x: scroll;
+  }
+}
+.Processed {
+  background-color: #000;
+}
+.Untreated {
+  background-color: #444;
+}
+.order-status a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 4px;
+}

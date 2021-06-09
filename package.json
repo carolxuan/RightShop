@@ -9,6 +9,7 @@
     "@sweetalert2/theme-dark": "^5.0.0",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
+    "c3": "^0.7.20",
     "ejs-webpack-loader": "^2.2.2",
     "jquery": "^3.6.0",
     "postcss-cli": "^8.3.1",
