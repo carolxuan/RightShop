@@ -1,0 +1,23 @@
+.sign {
+  img {
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    @include pad() {
+      height: 360px;
+      width: 100%;
+    }
+  }
+  .sign-inner {
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-width: 600px;
+    padding: 56px 64px 16px 64px;
+    margin-left: -50px;
+    @include pad() {
+      max-width: 375px;
+      padding: 32px 40px 16px 40px;
+      margin: -72px auto 24px auto;
+    }
+  }
+}

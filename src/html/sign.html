@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="sign">
+      <div class="wrap align-items-center">
+        <div class="col-12 col-md-6">
+          <img src="<%= require('../image/login.png') %>" alt="" />
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="sign-inner">
+            <h3 class="text-center mb-5">管理員登入</h3>
+            <form action="" class="login-form">
+              <div class="mb-3">
+                <label for="inputUser" class="form-label fw-bold display-10"
+                  >帳號</label
+                >
+                <input
+                  type="text"
+                  class="form-control mb-1"
+                  id="inputUser"
+                  name="帳號"
+                  placeholder="請輸入帳號"
+                />
+                <p class="text-gray5">提示：good123@gmail.com</p>
+              </div>
+              <div class="mb-3">
+                <label for="inputPassword" class="form-label fw-bold display-10"
+                  >密碼</label
+                >
+                <input
+                  type="password"
+                  class="form-control mb-1"
+                  id="inputPassword"
+                  name="密碼"
+                  placeholder="請輸入密碼"
+                />
+                <p class="text-gray5">提示：123456</p>
+              </div>
+              <a
+                href="javascript:void(0)"
+                class="sign-btn btn btn-primary w-100 mb-4"
+                >登入</a
+              >
+              <p class="text-center">
+                <a href="./index.html" class="text-center text-gray5"
+                  >回到前台</a
+                >
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

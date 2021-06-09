@@ -11,6 +11,8 @@ module.exports = {
     index: './js/index.js',
     product: './js/product.js',
     information: './js/information.js',
+    sign: './js/sign.js',
+    admin: './js/admin.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -132,6 +134,20 @@ module.exports = {
       template: 'html/information.html',
       chunksSortMode: 'manual',
       chunks: ['vendors', 'information'],
+    }),
+    new HtmlWebpackPlugin({
+      title: '後台登入',
+      filename: 'sign.html',
+      template: 'html/sign.html',
+      chunksSortMode: 'manual',
+      chunks: ['vendors', 'sign'],
+    }),
+    new HtmlWebpackPlugin({
+      title: '後台管理',
+      filename: 'admin.html',
+      template: 'html/admin.html',
+      chunksSortMode: 'manual',
+      chunks: ['vendors', 'admin'],
     }),
   ],
 }
