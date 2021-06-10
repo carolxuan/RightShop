@@ -3,6 +3,7 @@ import './layout.js'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { apiPath, baseUrl, token, config } from './config.js'
+import toThousands from './util.js'
 
 // loading
 const load = document.querySelector('.loading-icon')
@@ -163,10 +164,14 @@ function renderProducts(category) {
                 <div
                   class="d-flex justify-content-between align-items-center mb-3"
                 >
-                  <del>NT ${item.origin_price}</del>
-                  <p class="text-red display-9">NT ${item.price}</p>
+                  <del>NT ${toThousands(item.origin_price)}</del>
+                  <p class="text-red display-9">NT ${toThousands(
+                    item.price
+                  )}</p>
                 </div>
-                <a href="javascript:void(0)" class="btn btn-primary w-100 fw-bold" data-id="${item.id}">
+                <a href="javascript:void(0)" class="btn btn-primary w-100 fw-bold" data-id="${
+                  item.id
+                }">
                   加入購物車
                 </a>
               </li>`
@@ -199,9 +204,9 @@ function renderCarts() {
                     <p>${item.product.title}</p>
                   </div>
                 </td>
-                <td data-title="單價" class="td-before">NT $${
+                <td data-title="單價" class="td-before">NT $${toThousands(
                   item.product.price
-                }</td>
+                )}</td>
                 <td data-title="數量" class="td-before">
                   <a
                     href="javascript:void(0);"
@@ -224,9 +229,9 @@ function renderCarts() {
                     >add</a
                   >
                 </td>
-                <td data-title="金額" class="td-before">NT $${
+                <td data-title="金額" class="td-before">NT $${toThousands(
                   item.product.price * item.quantity
-                }</td>
+                )}</td>
                 
               </tr>`
     })
@@ -234,7 +239,7 @@ function renderCarts() {
     list = `<tr><td>目前購物車是空的</td></tr>`
   }
   cartList.innerHTML = list
-  cartTotal.textContent = finalTotal
+  cartTotal.textContent = toThousands(finalTotal)
 }
 
 // 點擊產品料表

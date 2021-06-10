@@ -4,6 +4,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import validate from 'validate.js'
 import { apiPath, baseUrl, token, config } from './config.js'
+import toThousands from './util.js'
 
 // loading
 const load = document.querySelector('.loading-icon')
@@ -91,11 +92,11 @@ function getCarts() {
         list += `<tr>
                   <td>${item.product.title}</td>
                   <td>${item.quantity}</td>
-                  <td>NT $${item.product.price}</td>
+                  <td>NT $${toThousands(item.product.price)}</td>
                 </tr>`
       })
       orderList.innerHTML = list
-      total.textContent = finalTotal
+      total.textContent = toThousands(finalTotal)
     })
     .catch((error) => {
       console.log(error)

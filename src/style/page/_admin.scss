@@ -2,12 +2,30 @@
   @include pad() {
     overflow-x: scroll;
   }
+  .table-css {
+    width: 100%;
+    .thead-tr-css {
+      background-color: $primary;
+    }
+    th {
+      padding: 10px 8px;
+    }
+    td {
+      padding: 10px 8px;
+    }
+    .tr-css:nth-child(even) {
+      background-color: $gray-200;
+    }
+    .tr-css:nth-child(odd) {
+      background-color: $gray-100;
+    }
+  }
 }
 .Processed {
   background-color: #000;
 }
 .Untreated {
-  background-color: #444;
+  background-color: $gray-500;
 }
 .order-status a {
   display: block;
